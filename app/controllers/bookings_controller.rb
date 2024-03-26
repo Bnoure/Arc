@@ -1,4 +1,9 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = current_user.bookings
+    @dates = @bookings.map { |booking| (booking.starts_at - Date.today).to_i }
+  end
+
   def show
     @booking = Booking.find(params[:id])
   end
@@ -24,6 +29,12 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
     redirect_to booking_path(@booking)
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to rooth_path
   end
 
   private

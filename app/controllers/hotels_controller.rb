@@ -3,7 +3,7 @@ class HotelsController < ApplicationController
     if params[:search] && params[:search][:city].present?
       @search_params = search_params.to_h
       @search_params[:start_date], @search_params[:end_date] = @search_params[:start_date].split(' au ')
-      @hotels = Hotel.where(city: @search_params[:city])
+      @hotels = Hotel.joins(:rooms).where(city: @search_params[:city]).where('rooms.capacity >= ?', @search_params[:capacity])
     else
       @hotels = Hotel.all
     end

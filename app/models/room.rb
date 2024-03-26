@@ -10,3 +10,4 @@ class Room < ApplicationRecord
 
 
 end
+  

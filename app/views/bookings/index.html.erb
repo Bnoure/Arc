@@ -1,1 +1,9 @@
-
+<% @bookings.each do |booking| %>
+  <p>Booking ID: <%= booking.room.hotel.name %></p>
+  <p>Booking Date: <%= booking.created_at %></p>
+  <p>Booking Date: <%= booking.starts_at %></p>
+  <p>Nombre de jour avant: <%= @date %></p>
+  <% if @date != 0 %>
+ <%= link_to "Supprimer", user_bookings_path(booking), method: :delete, data: { turbo_action: 'replace', turbo_frame: 'id_frame' } %>
+<% end %>
+<%end%>

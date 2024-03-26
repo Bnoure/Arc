@@ -83,7 +83,7 @@ room21 = Room.create!(hotel: hotel7, name: "Room 21", capacity: 6, price_per_nig
 puts "Room created"
 room22 = Room.create!(hotel: hotel8, name: "Room 22", capacity: 2, price_per_night: 100)
 puts "Room created"
-room23 = Room.create!(hotel: hotel8, name: "Room 23", capacity: 4, price_per_night: 200)
+room23 = Room.create!(hotel: hotel8, name: "Room 23", capacity: 8, price_per_night: 200)
 
 
 puts "Booking created"
