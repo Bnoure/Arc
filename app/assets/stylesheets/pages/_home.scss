@@ -14,3 +14,49 @@
   background: blue !important;
   border-color: blue !important;
 }
+.flatpickr-calendar {
+  z-index: 10000 !important;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  /*  grid-template-rows: 0.4fr 2.6fr 1.5fr 0.6fr; */
+  gap: 0px 0px;
+  grid-template-areas:
+    "navbar navbar"
+    "herotext imaghero"
+    "search search";
+}
+.search {
+  grid-area: search;
+}
+.navbar {
+  grid-area: navbar;
+}
+.imaghero {
+  grid-area: imaghero;
+}
+.herotext {
+  grid-area: herotext;
+}
+
+.formsearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+// .fomrme {
+//   position: fixed;
+//   bottom: 100px;
+//   right: 337px;
+// }
+
+.imb {
+  position: relative;
+  width: 740px;
+  left: 435px;
+  z-index: 9999; // Ajoutez cette ligne
+}

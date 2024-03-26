@@ -63,6 +63,7 @@ const French = {
 export default class extends Controller {
   connect() {
     flatpickr(this.element, {
+      position: "above",
       mode: "range",
       locale: French,
       dateFormat: "d-m-Y",

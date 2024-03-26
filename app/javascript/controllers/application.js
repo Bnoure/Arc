@@ -18,6 +18,7 @@ window.Swal = window.validateForm = function validateForm() {
 }
 
 
+
 const application = Application.start()
 
 // Configure Stimulus development experience

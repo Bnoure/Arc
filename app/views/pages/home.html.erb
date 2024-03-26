@@ -1,20 +1,37 @@
 
+<div class="container", style= "gap: 76px;">
+<div class="imaghero">
+    <%= image_tag "immeuble.png", class: "imb" %>
+  </div>
+  <div class="herotext">
+    <h1>Partez en vacances</h1>
+    <p>Des milliers de logements à travers le monde</p>
+  </div>
 
-<%= simple_form_for :search, url: hotels_path, method: :get, html: { class: "container", id: "search-form", onsubmit: "return validateForm();" } do |f| %>
+
+
+  <div class="search">
+    <%= simple_form_for :search, url: hotels_path, method: :get, html: { class: "fomrme", id: "search-form", onsubmit: "return validateForm();" } do |f| %>
   <div class="row">
     <div class="col-md-3">
-      <%= f.input :city, input_html: { id: "city-input", class: "form-control", placeholder: "Ville" }, name: 'search[city]' %>
+      <%= f.input :city, label: "Localisation", input_html: { id: "city-input", class: "form-control", placeholder: "Ville" }, name: 'search[city]' %>
     </div>
     <div class="col-md-3">
-      <%= f.input :capacity, input_html: { id: "capacity-input", class: "form-control", placeholder: "Nombre de personnes", type: "number" } %>
+      <%= f.input :capacity, collection: 1..8, label: "Nombre de personnes", input_html: { id: "capacity-input", class: "form-control select" } %>
     </div>
     <div class="col-md-3">
-      <%= f.input :start_date, input_html: { id: "start-date-input", class: "form-control", placeholder: "Date de début", type: "text", data: { controller: "flatpickr" } } %>
+      <%= f.input :start_date, label: "Votre séjour ", input_html: { id: "start-date-input", class: "form-control", placeholder: "Vos dates", type: "text", data: { controller: "flatpickr" } } %>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 maclassebut">
       <div id="date-difference"></div>
+      <%= f.button :submit, "Rechercher", class: "btn btn-primary" %>
     </div>
     <%= f.input :end_date, as: :hidden, input_html: { id: "end-date-input" } %>
   </div>
-  <%= f.button :submit, "Rechercher", class: "btn btn-primary" %>
+
 <% end %>
+  </div>
+
+
+
+</div>
