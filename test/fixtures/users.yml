@@ -1,0 +1,5 @@
+one:
+  pseudo: TestNour
+  email: testuser@example.com
+  encrypted_password: password
+  # Ajoutez d'autres attributs nécessaires pour votre modèle d'utilisateur ici

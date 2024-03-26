@@ -1,0 +1,18 @@
+<%= link_to "back", root_path %>
+
+<% @hotels.each do |hotel| %>
+  <div class="col-md-4">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3><%= hotel.name %></h3>
+        <p><%= hotel.address %></p>
+        <% hotel.rooms.each do |room| %>
+          <p><%= room.name %></p>
+          <p><%= room.capacity %></p>
+          <p><%= room.price_per_night %></p>
+          <p><%= link_to 'Show', hotel_room_path(room.hotel, room, search: @search_params) %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,20 +1,22 @@
 class BookingsController < ApplicationController
-
   def show
     @booking = Booking.find(params[:id])
   end
 
   def new
-
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = current_user
-    if @booking.save!
-      redirect_to booking_path(@booking)
-    else
-      render :new
+
+    respond_to do |format|
+      if @booking.save
+        format.js { flash.now[:success] = 'Booking was successfully created.' }
+        format.turbo_stream
+      else
+        format.js { flash.now[:error] = 'There was an error creating the booking.' }
+        format.turbo_stream
+      end
     end
   end
 
@@ -27,6 +29,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:starts_at, :ends_at, :room_id)
+    params.require(:booking).permit(:starts_at, :ends_at, :room_id, :user_id)
   end
 end

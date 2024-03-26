@@ -1,21 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
 
-<%# @hotels.each do |hotel| %>
-<!--  <div class="col-md-4">
-    <div class="thumbnail">
-
-      <div class="caption">
-        <h3><%#= hotel.name %></h3>
-        <p><%#= hotel.address %></p>
-        <p><%# hotel.each do |room| %></p>
-          <p><%#= hotel.room.capacity %></p>
-          <p><%#= hotel.room.price_per_nigh %></p>
-        <%# end%>-->
-<!--        <p><%#= link_to 'Show', hotel %></p>
-      </div>
+<%= simple_form_for :search, url: hotels_path, method: :get, html: { class: "container", id: "search-form", onsubmit: "return validateForm();" } do |f| %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= f.input :city, input_html: { id: "city-input", class: "form-control", placeholder: "Ville" }, name: 'search[city]' %>
     </div>
+    <div class="col-md-3">
+      <%= f.input :capacity, input_html: { id: "capacity-input", class: "form-control", placeholder: "Nombre de personnes", type: "number" } %>
+    </div>
+    <div class="col-md-3">
+      <%= f.input :start_date, input_html: { id: "start-date-input", class: "form-control", placeholder: "Date de début", type: "text", data: { controller: "flatpickr" } } %>
+    </div>
+    <div class="col-md-3">
+      <div id="date-difference"></div>
+    </div>
+    <%= f.input :end_date, as: :hidden, input_html: { id: "end-date-input" } %>
   </div>
-<%# end %>-->
-<!---->
+  <%= f.button :submit, "Rechercher", class: "btn btn-primary" %>
+<% end %>

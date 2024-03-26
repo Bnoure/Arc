@@ -10,3 +10,22 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.dropdown-menu.show {
+  display: flex;
+  width: 421px;
+  background: white;
+  max-width: 765px;
+  padding-top: 2rem;
+  border-bottom-left-radius: 3%;
+  border-bottom-right-radius: 3%;
+  border: 70;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease both;
+}
+
+.dropdown-menu[data-bs-popper] {
+  top: 129%;
+  left: -274px;
+  margin-top: var(--bs-dropdown-spacer);
+}
