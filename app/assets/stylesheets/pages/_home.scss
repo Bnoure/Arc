@@ -20,7 +20,7 @@
 
 .container {
   display: grid;
-  grid-template-columns: 0.4fr 1fr;
+  // grid-template-columns: 0.4fr 1fr;
   /*  grid-template-rows: 0.4fr 2.6fr 1.5fr 0.6fr; */
   gap: 0px 0px;
   grid-template-areas:
@@ -61,13 +61,13 @@
 }
 
 .memorable {
-  font-size: 92px;
+  font-size: 88px;
   font-family: "Aguafina Script", cursive;
   position: relative;
   width: 740px;
   left: 337px;
   color: #11928f;
-  bottom: 153px;
+  bottom: 147px;
 }
 
 .headline {
@@ -89,6 +89,12 @@
   bottom: 119px;
 }
 
-.bg-image {
-  margin: 0 10px; /* Cela ajoute une marge de 10px à gauche et à droite de chaque image */
+.bg-image img {
+  margin: 10px;
+}
+
+footer {
+  margin-left: 150px;
+  position: relative;
+  bottom: 19px;
 }
