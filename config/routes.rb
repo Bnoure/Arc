@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'user_bookings', to: 'bookings#index', as: 'user_bookings'
   resources :hotels, only: %i[index show] do
     resources :rooms, except: %i[edit update] do
-      resources :bookings, only: %i[index create]
+      resources :bookings, only: %i[index create destroy]
     end
   end
 end

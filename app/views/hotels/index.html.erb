@@ -1,18 +1,21 @@
 <%= link_to "back", root_path %>
 
-<% @hotels.each do |hotel| %>
-  <div class="col-md-4">
-    <div class="thumbnail">
-      <div class="caption">
-        <h3><%= hotel.name %></h3>
-        <p><%= hotel.address %></p>
+<div class="grid-container">
+  <% @hotels.each do |hotel| %>
+    <div class="card">
+      <div class="card-img">
+        <!-- Vous pouvez ajouter une image ici -->
+      </div>
+      <div class="card-title"><%= hotel.name %></div>
+      <div class="card-subtitle"><%= hotel.address %></div>
+      <hr class="card-divider">
+      <div class="card-footer">
         <% hotel.rooms.each do |room| %>
-          <p><%= room.name %></p>
-          <p><%= room.capacity %></p>
-          <p><%= room.price_per_night %></p>
-          <p><%= link_to 'Show', hotel_room_path(room.hotel, room, search: @search_params) %></p>
+          <%= link_to hotel_room_path(room.hotel, room, search: @search_params), class: "card-btn" do %>
+            <div class="card-price"><span>$</span> <%= room.price_per_night %></div>
+          <% end %>
         <% end %>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

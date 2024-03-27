@@ -59,3 +59,36 @@
   width: 740px;
   left: 435px;
 }
+
+.memorable {
+  font-size: 92px;
+  font-family: "Aguafina Script", cursive;
+  position: relative;
+  width: 740px;
+  left: 337px;
+  color: #11928f;
+  bottom: 153px;
+}
+
+.headline {
+  width: 400px;
+  font-size: 46px;
+  font-weight: 700;
+  color: var(--font-color);
+}
+
+.herotext {
+  position: relative;
+  top: 117px;
+  width: 290px;
+}
+
+.subtitre {
+  font-style: italic;
+  position: relative;
+  bottom: 119px;
+}
+
+.bg-image {
+  margin: 0 10px; /* Cela ajoute une marge de 10px à gauche et à droite de chaque image */
+}

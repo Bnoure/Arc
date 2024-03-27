@@ -4,34 +4,14 @@
     <%= image_tag "immeuble.png", class: "imb" %>
   </div>
   <div class="herotext">
-    <h1>Partez en vacances</h1>
-    <p>Des milliers de logements à travers le monde</p>
+   <h1 class="headline">Hôtel pour des <br>riches en émotions</h1>
+<h1 class="memorable">Moments mémorables</h1>
+<p class = "subtitre">Nous avons <strong>459 chambres</strong> réparties à travers la France, avec des standards de chambre équivalents à des hôtels 5 étoiles.</p>
   </div>
 
 
-
-  <div class="search">
-    <%= simple_form_for :search, url: hotels_path, method: :get, html: { class: "fomrme", id: "search-form", onsubmit: "return validateForm();" } do |f| %>
-  <div class="row">
-    <div class="col-md-3">
-      <%= f.input :city, label: "Localisation", input_html: { id: "city-input", class: "form-control", placeholder: "Ville" }, name: 'search[city]' %>
-    </div>
-    <div class="col-md-3">
-      <%= f.input :capacity, collection: 1..8, label: "Nombre de personnes", input_html: { id: "capacity-input", class: "form-control select" } %>
-    </div>
-    <div class="col-md-3">
-      <%= f.input :start_date, label: "Votre séjour ", input_html: { id: "start-date-input", class: "form-control", placeholder: "Vos dates", type: "text", data: { controller: "flatpickr" } } %>
-    </div>
-    <div class="col-md-3 maclassebut">
-      <div id="date-difference"></div>
-      <%= f.button :submit, "Rechercher", class: "btn btn-primary" %>
-    </div>
-    <%= f.input :end_date, as: :hidden, input_html: { id: "end-date-input" } %>
-  </div>
-
-<% end %>
-  </div>
-
+  <%= render 'search' %>
 
 
 </div>
+<%= render 'footer' %>
