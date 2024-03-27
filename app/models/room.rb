@@ -6,8 +6,7 @@ class Room < ApplicationRecord
   validates :capacity, numericality: { only_integer: true, greater_than: 0 }
   validates :price_per_night, presence: true
   validates :price_per_night, numericality: { only_integer: true, greater_than: 0 }
-
+  has_one_attached :image
 
 
 end
-  

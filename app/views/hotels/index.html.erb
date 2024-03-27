@@ -1,14 +1,16 @@
 <%= link_to "back", root_path %>
+<%= render 'pages/search' %>
 
 <div class="grid-container">
   <% @hotels.each do |hotel| %>
     <div class="card">
       <div class="card-img">
+          <%= image_tag hotel.image, class: "card-img" if hotel.image.present? %>
         <!-- Vous pouvez ajouter une image ici -->
       </div>
       <div class="card-title"><%= hotel.name %></div>
       <div class="card-subtitle"><%= hotel.address %></div>
-      <hr class="card-divider">
+
       <div class="card-footer">
         <% hotel.rooms.each do |room| %>
           <%= link_to hotel_room_path(room.hotel, room, search: @search_params), class: "card-btn" do %>

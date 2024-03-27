@@ -62,8 +62,9 @@ const French = {
 // Connects to data-controller="flatpickr"
 export default class extends Controller {
   connect() {
+    const position = window.location.pathname.includes('hotels') ? "below" : "above";
     flatpickr(this.element, {
-      position: "above",
+      position: position,
       mode: "range",
       locale: French,
       dateFormat: "d-m-Y",
