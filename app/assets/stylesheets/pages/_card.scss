@@ -4,6 +4,7 @@
 then set the desired styles for .card-img. */
 
 .grid-container {
+  margin-top: -62px;
   margin-left: 107px;
   padding: 30px;
   display: flex;
@@ -198,12 +199,12 @@ then set the desired styles for .card-img. */
 }
 
 .card-btn {
-  height: 22px;
-  background: var(--bg-color);
-  border: 2px solid var(--main-color);
-  border-radius: 5px;
-  padding: 0 15px;
-  transition: all 0.3s;
+  // height: 22px;
+  // background: var(--bg-color);
+  // border: 2px solid var(--main-color);
+  // border-radius: 5px;
+  // padding: 0 15px;
+  // transition: all 0.3s;
 }
 
 .card-img:hover {
