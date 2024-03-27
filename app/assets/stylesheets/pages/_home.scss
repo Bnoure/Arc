@@ -30,6 +30,7 @@
 }
 .search {
   grid-area: search;
+  margin-left: 64px;
 }
 .navbar {
   grid-area: navbar;
@@ -99,4 +100,46 @@ footer {
   position: relative;
   bottom: 19px;
   background-color: none !important;
+}
+
+.monbutton {
+  position: relative;
+  bottom: 10px;
+  background-color: #eee;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  width: 10em;
+  border-radius: 1rem;
+  color: lightcoral;
+  box-shadow: 0 0.4rem #dfd9d9;
+  cursor: pointer;
+}
+
+.monbutton:active {
+  color: lightcoral;
+  box-shadow: 0 0.2rem lightcoral;
+  transform: translateY(0.2rem);
+}
+
+.monbutton:hover:not(:disabled) {
+  background: lightcoral;
+  color: #eee;
+  text-shadow: 0 0.1rem #bcb4b4;
+}
+
+.monbutton:disabled {
+  cursor: auto;
+  color: grey;
+}
+
+#date-difference {
+  margin-top: 13px;
+  left: 14px;
+  bottom: 6px;
+  /* height: 60px; */
+  position: relative;
+  padding: 8px;
+  border: solid;
+  color: #11928f;
 }

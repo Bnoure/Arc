@@ -1,5 +1,9 @@
 <%= link_to "back", root_path %>
+<div class="container", style="position: relative;
+    bottom: 34px;">
 <%= render 'pages/search' %>
+</div>
+
 
 <div class="grid-container">
   <% @hotels.each do |hotel| %>
@@ -14,7 +18,7 @@
       <div class="card-footer">
         <% hotel.rooms.each do |room| %>
           <%= link_to hotel_room_path(room.hotel, room, search: @search_params), class: "card-btn" do %>
-            <div class="card-price"><span>$</span> <%= room.price_per_night %></div>
+            <div class="card-price"><%= room.price_per_night %><span>€/par nuit</span> </div>
           <% end %>
         <% end %>
       </div>
