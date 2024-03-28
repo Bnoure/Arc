@@ -1,5 +1,5 @@
 <% @bookings.each do |booking| %>
-   <%= image_tag booking.room.image, class: "card-img"%>
+   <%= cl_image_tag booking.room.image.key, class: "card-img"%>
   <p>Booking ID: <%= booking.room.hotel.name %></p>
   <p>Booking Date: <%= booking.ends_at %></p>
   <p>Booking Date: <%= booking.starts_at %></p>

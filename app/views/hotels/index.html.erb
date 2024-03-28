@@ -9,7 +9,7 @@
   <% @hotels.each do |hotel| %>
     <div class="card">
       <div class="card-img">
-          <%= image_tag hotel.image, class: "card-img" if hotel.image.present? %>
+          <%= cl_image_tag hotel.image.key, class: "card-img" if hotel.image.present? %>
         <!-- Vous pouvez ajouter une image ici -->
       </div>
       <div class="card-title"><%= hotel.name %></div>
