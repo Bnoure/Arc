@@ -65,6 +65,10 @@ export default class extends Controller {
     const position = window.location.pathname.includes('hotels') ? "below" : "above";
     flatpickr(this.element, {
       position: position,
+      altInput: true, // to display the date in a readable format
+      altFormat: "d-m-Y",
+       // block la date a date.now
+      minDate: "today",
       mode: "range",
       locale: French,
       dateFormat: "d-m-Y",

@@ -1,3 +1,4 @@
+
 class BookingsController < ApplicationController
   def index
     @bookings = current_user.bookings
@@ -34,7 +35,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to rooth_path
+    redirect_back(fallback_location: request.referer)
   end
 
   private

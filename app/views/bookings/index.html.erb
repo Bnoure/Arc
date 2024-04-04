@@ -1,10 +1,24 @@
-<% @bookings.each do |booking| %>
-   <%= cl_image_tag booking.room.image.key, class: "card-img"%>
-  <p>Booking ID: <%= booking.room.hotel.name %></p>
-  <p>Booking Date: <%= booking.ends_at %></p>
-  <p>Booking Date: <%= booking.starts_at %></p>
-  <p>Nombre de jour avant: <%= @date %></p>
-  <% if @date != 0 %>
- <%= link_to "Supprimer",  hotel_room_booking_path(booking.room.hotel, booking.room, booking), data: { turbo_method: :delete } , method: :delete %>
-<% end %>
-<%end%>
+<div class="grid-container2">
+  <% @bookings.each do |booking| %>
+    <% if (booking.starts_at.to_date - Date.today).to_i > 0 %>
+      <div class="card">
+        <div class="card-img">
+          <%= cl_image_tag booking.room.image.key,
+          :width => 226, :height => 129,
+          class: "card-img" if booking.room.image.present? %>
+        </div>
+        <div class="card-title"><%= booking.room.hotel.name %></div>
+
+        <div class="card-footer specformat">
+          <p class="card-subtitle"> Du <span class="date">  <%= l(booking.starts_at, format: :long) %></span></p>
+          <p class="card-subtitle"> Au <span class="date">  <%= l(booking.ends_at, format: :long) %></span></p>
+          <p class="card-subtitle">Nombre de jours avant: <span class="date"><%= (booking.starts_at.to_date - Date.today).to_i %></span></p>
+          <%= link_to hotel_room_booking_path(booking.room.hotel, booking.room, booking), data: { turbo_method: :delete } , method: :delete, class: "button" do %>
+            <svg viewBox="0 0 448 512" class="svgIcon"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path></svg>
+            
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

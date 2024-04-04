@@ -9,10 +9,11 @@
   <% @hotels.each do |hotel| %>
     <div class="card">
       <div class="card-img">
-          <%= cl_image_tag hotel.image.key, class: "card-img" if hotel.image.present? %>
-        <!-- Vous pouvez ajouter une image ici -->
+          <%= cl_image_tag hotel.image.key,
+
+            class: "card-img" if hotel.image.present? %>
       </div>
-      <div class="card-title"><%= hotel.name %></div>
+      <div class="card-title"><%=hotel.city%>, <%= hotel.name %></div>
       <div class="card-subtitle"><%= hotel.address %></div>
 
       <div class="card-footer">

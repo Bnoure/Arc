@@ -1,3 +1,7 @@
+
+
+<div class="formatroom">
+  <div class="Hero-hotel-room">
 <% if @search_params && @search_params[:start_date].present? && @search_params[:end_date].present? %>
   <% start_date = Date.strptime(@search_params[:start_date], '%d-%m-%Y') %>
   <% end_date = Date.strptime(@search_params[:end_date], '%d-%m-%Y') %>
@@ -11,12 +15,17 @@
   <p>Nombre de jours: <%= number_of_days %></p>
   <p>Prix total: <%= total_price %></p>
 <% end %>
-
-
-<%= simple_form_for Booking.new, url: hotel_room_bookings_path(@room.hotel, @room), method: :post, data: { controller: "booking", booking_target: "form", turbo_frame: "_top", action: "submit->booking#submit" } do |f| %>
+  </div>
+  <div class="photohotelroom">
+    <%= cl_image_tag @room.image.key, class:"card-img" %>
+  </div>
+  <div class="reservation-section">
+    <%= simple_form_for Booking.new, url: hotel_room_bookings_path(@room.hotel, @room), method: :post, data: { controller: "booking", booking_target: "form", turbo_frame: "_top", action: "submit->booking#submit" } do |f| %>
   <%= f.input :room_id, as: :hidden, input_html: { value: @room.id } %>
   <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
   <%= f.input :starts_at, as: :hidden, input_html: { value: @search_params[:start_date] } %>
   <%= f.input :ends_at, as: :hidden, input_html: { value: @search_params[:end_date] } %>
   <%= f.button :submit, "Réserver", class: "btn btn-primary" %>
 <% end %>
+  </div>
+</div>

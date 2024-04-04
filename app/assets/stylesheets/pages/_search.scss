@@ -4,3 +4,22 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.formatroom {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  grid-template-rows: 1.4fr 0.6fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "photohotelroom Hero-hotel-room"
+    "reservation-section Hero-hotel-room";
+}
+.Hero-hotel-room {
+  grid-area: Hero-hotel-room;
+}
+.photohotelroom {
+  grid-area: photohotelroom;
+}
+.reservation-section {
+  grid-area: reservation-section;
+}
