@@ -1,4 +1,11 @@
+ <div class="reservation-container">
+<h2 class="reservation-title">Vos réservations</h2>
+		<h3 class="reservation-subtitle">Consultez,  annulez vos réservations en un clin d'œil.</h3>
+ </div>
+
+
 <div class="grid-container2">
+
   <% @bookings.each do |booking| %>
     <% if (booking.starts_at.to_date - Date.today).to_i >= 0 %>
       <div class="card">

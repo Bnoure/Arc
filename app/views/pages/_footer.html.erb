@@ -3,46 +3,30 @@
   <div class="container p-4">
     <!-- Section: Images -->
     <section class="">
-      <div class="row">
-        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-          <div class="bg-image shadow-1-strong rounded">
-            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/113.webp" style="width: 130px" />
-          </div>
+      <% cities = ["Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Strasbourg", "Montpellier", "Bordeaux", "Lille"] %>
+      
+
+      <% cities.each_slice(5).with_index do |city_group, index| %>
+  <div class="row justify-content-center">
+    <% city_group.each_with_index do |city, i| %>
+      <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+        <div class="bg-image shadow-1-strong rounded">
+          <a href="<%= "https://www.google.com/search?q=" + city + "&source=lnms&tbm=isch" %>" target="_blank">
+            <img src="<%= "https://source.unsplash.com/1600x900/?france,city," + city.downcase %>" alt="<%= city %>" class="img-fluid" />
+          </a>
         </div>
-        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-          <div class="bg-image shadow-1-strong rounded">
-            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/111.webp" style="width: 130px" />
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-          <div class="bg-image shadow-1-strong rounded">
-            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/112.webp" style="width: 130px" />
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-          <div class="bg-image shadow-1-strong rounded">
-            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/114.webp" style="width: 130px" />
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-          <div class="bg-image shadow-1-strong rounded">
-            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/115.webp" style="width: 130px" />
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-          <div class="bg-image shadow-1-strong rounded">
-            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/116.webp" style="width: 130px" />
-          </div>
-        </div>
+        <h5 class="text-center"><%= city %></h5>
       </div>
+    <% end %>
+  </div>
+<% end %>
     </section>
     <!-- Section: Images -->
   </div>
   <!-- Grid container -->
 
   <!-- Copyright -->
-  <div class="text-center p-3" style="right: 120px;
-    position: relative;bottom: 18px;">
+  <div class="text-center p-3">
     © 2024 Copyright:
     <a class="text-body" href="https://github.com/Bnoure">By Nour-Eddine Benkerroum </a>
   </div>
