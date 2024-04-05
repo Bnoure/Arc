@@ -17,7 +17,7 @@
 <% end %>
   </div>
   <div class="photohotelroom">
-    <%= cl_image_tag @room.image.key, class:"card-img" %>
+    <%= cl_image_tag @room.image.key, class:"roomimg" %>
   </div>
   <div class="reservation-section">
     <%= simple_form_for Booking.new, url: hotel_room_bookings_path(@room.hotel, @room), method: :post, data: { controller: "booking", booking_target: "form", turbo_frame: "_top", action: "submit->booking#submit" } do |f| %>

@@ -16,9 +16,35 @@
 }
 .Hero-hotel-room {
   grid-area: Hero-hotel-room;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .photohotelroom {
   grid-area: photohotelroom;
+
+  width: 100%;
+  height: 100%;
+
+  -o-object-fit: cover;
+  object-fit: cover;
+
+  padding: 20px;
+  margin: 10px;
+
+  width: 100%;
+  height: 100%;
+}
+.roomimg {
+  width: 692px;
+  height: 417px;
+  border-radius: 20px;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
+  border: 2px solid black;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 .reservation-section {
   grid-area: reservation-section;
