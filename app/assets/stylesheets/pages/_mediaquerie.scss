@@ -1,0 +1,44 @@
+// Ajout des media queries pour adaptation mobile
+@media (max-width: 768px) {
+  .container {
+    gap: 20px;
+    grid-template-areas:
+      "navbar"
+      "herotext"
+      "imaghero"
+      "search";
+  }
+
+  .search,
+  .navbar,
+  .imaghero,
+  .herotext {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .imb {
+    width: 100%;
+    left: 0;
+  }
+
+  .memorable {
+    font-size: 48px;
+    left: 20px;
+    bottom: 74px;
+  }
+
+  .headline {
+    width: 90%;
+    font-size: 26px;
+  }
+
+  .herotext {
+    top: 0;
+    width: auto;
+  }
+
+  .subtitre {
+    bottom: 60px;
+  }
+}
