@@ -16,11 +16,12 @@ Hotel.destroy_all
 hotel_images = ["hotel1.jpg", "hotel2.jpg", "hotel3.jpg", "hotel4.jpg", "hotel5.jpg", "hotel6.jpg", "hotel7.jpg", "hotel8.jpg", "hotel9.jpg", "hotel10.jpg"]
 chambre_images = ["chambre1.jpg", "chambre2.jpg", "chambre3.jpg", "chambre4.jpg", "chambre5.jpg", "chambre6.jpg", "chambre7.jpg", "chambre8.jpg", "chambre9.jpg", "chambre10.jpg"]
 
+# Créer 3 utilisateurs
 user1 = User.create!(email: "nour@mail.com", password: "test123", pseudo: "bnoure")
 avatar1 = Cloudinary::Uploader.upload(Rails.root.join('app', 'assets', 'images', 'av1.jpg'))
 user1.avatar.attach(io: URI.open(avatar1['url']), filename: 'av1.jpg', content_type: 'image/png')
 
-user2 = User.create!(email: "zoe@mail.com", password: "test123", pseudo: "zoe")
+user2 = User.create!(email: "demo@arc.com", password: "password", pseudo: "zoe")
 avatar2 = Cloudinary::Uploader.upload(Rails.root.join('app', 'assets', 'images', 'av2.jpg'))
 user2.avatar.attach(io: URI.open(avatar2['url']), filename: 'av2.jpg', content_type: 'image/png')
 
