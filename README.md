@@ -53,14 +53,17 @@ Bienvenue dans une nouvelle ère de la réservation hôtelière. Bienvenue sur A
 </div>
 
 <div align="center">
-  
   <img src="https://res.cloudinary.com/dgmantli3/image/upload/v1712563934/github/Landingarc.png" alt="Capture d'écran de la page d'accueil" />
-  
-  <img src="https://res.cloudinary.com/dgmantli3/image/upload/v1712563940/github/Resa.png" alt="Capture d'écran de la page des réservations" />
-  
-  <img src="https://res.cloudinary.com/dgmantli3/image/upload/v1712563938/github/RoomArc.png" alt="Capture d'écran de la vue d'une chambre" />
-  
 </div>
+
+<div align="center">
+  <img src="https://res.cloudinary.com/dgmantli3/image/upload/v1712563940/github/Resa.png" alt="Capture d'écran de la page des réservations" />
+</div>
+
+<div align="center">
+  <img src="https://res.cloudinary.com/dgmantli3/image/upload/v1712563938/github/RoomArc.png" alt="Capture d'écran de la vue d'une chambre" />
+</div>
+  
 
 ***
 
