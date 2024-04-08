@@ -12,7 +12,7 @@ En tant que développeur Full Stack avec un parcours en gestion de projets IT, m
 
 <div align="center">  
   
-## 🌐 Arc - Votre Prochain Hôtel en un Clic  
+## 🏨 Arc - Votre Prochain Hôtel en un Clic  
 </div>
 
 <div align="center">
